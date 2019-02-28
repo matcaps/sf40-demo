@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    php:
+        build: docker/php/
+        working_dir: /srv
+        volumes: [ './:/srv' ]
+        links: ['db']
+
+    mailcatcher:
+        image: tophfr/mailcatcher:latest
+        ports:
+            - '1080:80'
+
+    nginx:
+        build: ./docker/nginx/
+        working_dir: /srv/
+        ports: ['9080:80']
+        links: ['php']
+        volumes: ['./:/srv']
+
+    db:
+        image: 'mysql:5.7'
+        working_dir: /srv/
+        ports: ['13307:3306']
+        environment:
+            MYSQL_ROOT_PASSWORD: root
