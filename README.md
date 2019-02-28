@@ -1,7 +1,7 @@
-Symfony 3.0.9 empty app
+Symfony 4.0.15 empty app
 =====================
 
-Plug-and-play Symfony 3.0.9 for demonstration
+Plug-and-play Symfony 4.0.15 for demonstration
 
 # Setup
 
