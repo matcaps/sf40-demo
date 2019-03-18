@@ -25,7 +25,7 @@ build: ## Build the Docker images
 .PHONY: build
 
 start: ## Start all containers
-	$(DOCKER_COMPOSE) up -d --remove-orphans --force-recreate
+	$(DOCKER_COMPOSE) up -d --remove-orphans
 .PHONY: start
 
 stop: ## Stop running containers
